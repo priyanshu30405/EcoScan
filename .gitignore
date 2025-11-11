@@ -1,0 +1,82 @@
+# Dependencies
+node_modules/
+Frontend/node_modules/
+Backend/vendor/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+Frontend/.env.local
+Backend/.env
+ml/.env
+
+# Build outputs
+.next/
+Frontend/.next/
+Frontend/.turbo/
+Frontend/out/
+Backend/dist/
+Backend/*.exe
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+ml/.venv/
+ml/venv/
+ml/env/
+ml/ENV/
+ml/env.bak/
+ml/venv.bak/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Uploads
+Frontend/public/uploads/*
+Frontend/public/captured-images/*
+ml/static/uploads/*
+!Frontend/public/uploads/.gitkeep
+!ml/static/uploads/.gitkeep
+
+# Model files (large files - use Git LFS if needed)
+*.keras
+*.h5
+*.pkl
+*.pth
+
+# Coverage
+coverage/
+*.lcov
+
+# Testing
+.nyc_output/
