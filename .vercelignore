@@ -1,0 +1,10 @@
+Backend/
+ml/
+scripts/
+images/
+*.md
+!README.md
+.gitignore
+.env
+.env.local
+

@@ -168,6 +168,21 @@ PORT=8080
 
 **Note:** The setup script (`scripts/setup-dev.ps1`) automatically creates these files with default values for development.
 
+#### Frontend Environment Variables (for deployment)
+```env
+NEXT_PUBLIC_ML_URL=https://your-ml-service.onrender.com
+NEXT_PUBLIC_BACKEND_URL=https://your-backend.onrender.com
+```
+
+## 🚀 Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+### Quick Deploy Options:
+
+1. **Frontend (Vercel)**: Connect GitHub repo → Deploy
+2. **Backend (Render)**: Use `render.yaml` for automatic deployment
+3. **ML Service (Render)**: Use `render.yaml` for automatic deployment
 
 ## 📸 Screenshots
 
@@ -189,6 +204,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📝 License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## 🔗 Links
+
+- **GitHub Repository**: [priyanshu30405/EcoScan](https://github.com/priyanshu30405/EcoScan)
+- **Live Demo**: [ecoscan.vercel.app](https://ecoscan.vercel.app) (Coming soon)
+- **Documentation**: See [DEPLOYMENT.md](./DEPLOYMENT.md) for deployment guide
 
 ## 👥 Author
 

@@ -855,10 +855,14 @@ const HeroSection = () => {
         },
       });
 
+      // Get API URLs from environment variables or use defaults
+      const mlServerUrl = process.env.NEXT_PUBLIC_ML_URL || "http://localhost:5001";
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080";
+
       // Send to Flask Server (ML Analysis) - Required
       const flaskFormData = new FormData();
       flaskFormData.append("file", blob, "captured.jpg");
-      const flaskResponse = await fetch("http://127.0.0.1:5001/upload", {
+      const flaskResponse = await fetch(`${mlServerUrl}/upload`, {
         method: "POST",
         body: flaskFormData,
       });
@@ -874,7 +878,7 @@ const HeroSection = () => {
       try {
         const goFormData = new FormData();
         goFormData.append("image", blob, "captured.jpg");
-        const goUploadResponse = await fetch("http://localhost:8080/upload", {
+        const goUploadResponse = await fetch(`${backendUrl}/upload`, {
           method: "POST",
           body: goFormData,
         });
@@ -900,7 +904,7 @@ const HeroSection = () => {
       try {
         const goAnalyzeForm = new FormData();
         goAnalyzeForm.append("image", blob);
-        const goAnalyzeResponse = await fetch("http://localhost:8080/analyze", {
+        const goAnalyzeResponse = await fetch(`${backendUrl}/analyze`, {
           method: "POST",
           body: goAnalyzeForm,
         });
@@ -978,10 +982,14 @@ const HeroSection = () => {
         },
       });
 
+      // Get API URLs from environment variables or use defaults
+      const mlServerUrl = process.env.NEXT_PUBLIC_ML_URL || "http://localhost:5001";
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080";
+
       // Send to Flask Server (ML Analysis) - Required
       const flaskFormData = new FormData();
       flaskFormData.append("file", file);
-      const flaskResponse = await fetch("http://127.0.0.1:5001/upload", {
+      const flaskResponse = await fetch(`${mlServerUrl}/upload`, {
         method: "POST",
         body: flaskFormData,
       });
@@ -997,7 +1005,7 @@ const HeroSection = () => {
       try {
         const goFormData = new FormData();
         goFormData.append("image", file);
-        const goUploadResponse = await fetch("http://localhost:8080/upload", {
+        const goUploadResponse = await fetch(`${backendUrl}/upload`, {
           method: "POST",
           body: goFormData,
         });
@@ -1023,7 +1031,7 @@ const HeroSection = () => {
       try {
         const goAnalyzeForm = new FormData();
         goAnalyzeForm.append("image", file);
-        const goAnalyzeResponse = await fetch("http://localhost:8080/analyze", {
+        const goAnalyzeResponse = await fetch(`${backendUrl}/analyze`, {
           method: "POST",
           body: goAnalyzeForm,
         });

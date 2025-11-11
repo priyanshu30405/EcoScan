@@ -1,0 +1,39 @@
+services:
+  # Backend Service
+  - type: web
+    name: ecoscan-backend
+    env: go
+    region: oregon
+    plan: free
+    buildCommand: cd Backend && go mod download && go build -o main
+    startCommand: cd Backend && ./main
+    envVars:
+      - key: AWS_REGION
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: S3_BUCKET_NAME
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FLASK_SERVER_URL
+        sync: false
+      - key: PORT
+        value: "8080"
+
+  # ML Service
+  - type: web
+    name: ecoscan-ml
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: cd ml && pip install -r requirements.txt
+    startCommand: cd ml && python app.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: "5001"
+
