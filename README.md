@@ -176,13 +176,25 @@ NEXT_PUBLIC_BACKEND_URL=https://your-backend.onrender.com
 
 ## 🚀 Deployment
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+### Quick Start Deployment
+👉 **See [QUICK_DEPLOY.md](./QUICK_DEPLOY.md) for step-by-step deployment guide (Recommended)**
 
-### Quick Deploy Options:
+### Detailed Deployment
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for comprehensive deployment instructions.
 
-1. **Frontend (Vercel)**: Connect GitHub repo → Deploy
-2. **Backend (Render)**: Use `render.yaml` for automatic deployment
-3. **ML Service (Render)**: Use `render.yaml` for automatic deployment
+### Deployment Options:
+
+1. **Frontend (Vercel)**: 
+   - Connect GitHub repo → Set Root Directory to `Frontend` → Deploy
+   - Auto-deploys on every push to `main` branch
+   
+2. **Backend (Render)**: 
+   - Use `render.yaml` for automatic deployment
+   - Or manually create Web Service with Go runtime
+   
+3. **ML Service (Render)**: 
+   - Use `render.yaml` for automatic deployment
+   - Or manually create Web Service with Python runtime
 
 ## 📸 Screenshots
 
